@@ -17,6 +17,9 @@ const Header = () => {
           <NavLink to={routePath.dashboard} className={({ isActive }) => (isActive ? 'active' : '')}>
             Dashboard
           </NavLink>
+          <NavLink to={routePath.teacherList} className={({ isActive }) => (isActive ? 'active' : '')}>
+            Teacher
+          </NavLink>
         </div>
         <nav className=''>
           <div className='links'>
