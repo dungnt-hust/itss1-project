@@ -6,6 +6,7 @@ import LoginPage from '~/pages/auth/login'
 import RegisterPage from '~/pages/auth/register'
 import DashboardPage from '~/pages/dashboard'
 import HomePage from '~/pages/home'
+import TeacherDetail from '~/pages/teacher-detail'
 import TeacherListPage from '~/pages/teacher-list'
 import { routePath } from './routePath'
 
@@ -56,6 +57,14 @@ const BrowserRouter = () => {
       element: (
         <DefaultLayout>
           <TeacherListPage />
+        </DefaultLayout>
+      ),
+    },
+    {
+      path: routePath.teacherDetail,
+      element: (
+        <DefaultLayout>
+          <TeacherDetail />
         </DefaultLayout>
       ),
     },

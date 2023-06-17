@@ -9,6 +9,7 @@ import {
 import { useQuery } from '@tanstack/react-query'
 import { Button, Dropdown, Form, Input, MenuProps, Pagination, Select } from 'antd'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { axiosInstance } from '~/helpers/axiosInstance'
 import Star from '~/views/Star'
 
@@ -35,7 +36,6 @@ const TeacherListPage = () => {
   const [name, setName] = useState<string>('')
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [value, setValue] = useState<any>({})
-  console.log(value)
 
   const [form] = Form.useForm()
 
@@ -89,44 +89,51 @@ const TeacherListPage = () => {
           <div className='flex flex-col gap-6'>
             {!error &&
               data?.data?.data.map((value: any, idex: any) => (
-                <div
-                  key={idex}
-                  className='border border-solid gap-5 border-gray-700 p-5 rounded-3xl grid grid-cols-[10rem_1fr]'
+                <Link
+                  to={{
+                    pathname: '/teacher-detail',
+                    search: `?id=${value.id}`,
+                  }}
                 >
-                  <div className='flex justify-center items-start'>
-                    <img
-                      src={value.avatar}
-                      className='w-36 h-36 object-cover rounded-full border border-solid border-gray-500'
-                      alt=''
-                    />
-                  </div>
-                  <div>
-                    <div className='flex justify-between items-center'>
-                      <div className='flex items-center justify-start text-xl gap-6'>
-                        <div className='font-semibold text-yellow-700'>家庭教師</div>
-                        <div className='font-semibold text-black'>{value.name}</div>
+                  <div
+                    key={idex}
+                    className='border border-solid gap-5 border-gray-700 p-5 rounded-3xl grid grid-cols-[10rem_1fr]'
+                  >
+                    <div className='flex justify-center items-start'>
+                      <img
+                        src={value.avatar}
+                        className='w-36 h-36 object-cover rounded-full border border-solid border-gray-500'
+                        alt=''
+                      />
+                    </div>
+                    <div>
+                      <div className='flex justify-between items-center'>
+                        <div className='flex items-center justify-start text-xl gap-6'>
+                          <div className='font-semibold text-yellow-700'>家庭教師</div>
+                          <div className='font-semibold text-black'>{value.name}</div>
+                        </div>
+                        <div className='cursor-pointer flex gap-1'>
+                          <div>{value.star_average}</div>
+                          <Star />
+                        </div>
                       </div>
-                      <div className='cursor-pointer flex gap-1'>
-                        <div>{value.star_average}</div>
-                        <Star />
+                      <div className='flex my-2 gap-2'>
+                        <EnvironmentOutlined className='text-purple-800 mt-1' />
+                        <div className='text-sm text-purple-700'>{value.address}</div>
                       </div>
+                      <div className='flex justify-between text-sm'>
+                        <div>年齢:{value.age} </div>
+                        <div>経験: {value.experience}</div>
+                        <div>料金: {value.price}VNĐ/45p</div>
+                      </div>
+                      <div className='my-2 flex gap-2'>
+                        <PhoneFilled className='cursor-pointer rotate-90' />
+                        <MailOutlined className='cursor-pointer' />
+                      </div>
+                      <div className='text-sm text-gray-700'>{value.detail}</div>
                     </div>
-                    <div className='flex my-2 gap-2'>
-                      <EnvironmentOutlined className='text-purple-800 mt-1' />
-                      <div className='text-sm text-purple-700'>{value.address}</div>
-                    </div>
-                    <div className='flex justify-between text-sm'>
-                      <div>年齢:{value.age} </div>
-                      <div>経験: {value.experience}</div>
-                      <div>料金: {value.price}VNĐ/45p</div>
-                    </div>
-                    <div className='my-2 flex gap-2'>
-                      <PhoneFilled className='cursor-pointer rotate-90' />
-                      <MailOutlined className='cursor-pointer' />
-                    </div>
-                    <div className='text-sm text-gray-700'>{value.detail}</div>
                   </div>
-                </div>
+                </Link>
               ))}
             {+data?.data.pagination?.totalPages && (
               <Pagination

@@ -5,5 +5,6 @@ export const routePath = {
   forgotPassword: '/auth/forgot-password',
   dashboard: '/dashboard',
   teacherList: '/teacher-list',
+  teacherDetail: '/teacher-detail',
   notFound: '*',
 }
