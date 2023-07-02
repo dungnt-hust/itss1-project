@@ -6,5 +6,6 @@ export const routePath = {
   dashboard: '/dashboard',
   teacherList: '/teacher-list',
   teacherDetail: '/teacher-detail',
+  admin: '/admin',
   notFound: '*',
 }

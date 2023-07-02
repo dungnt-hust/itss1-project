@@ -1,2 +1,14 @@
 @import './normalize.scss';
 @import './global.scss';
+@import './antd.scss';
+
+.admin-logo {
+  clip-path: polygon(0 0, 89% 0, 100% 24%, 100% 100%, 10% 100%, 0 69%);
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}

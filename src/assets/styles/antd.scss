@@ -1,0 +1,46 @@
+.ant-modal {
+  width: fit-content !important;
+  .ant-modal-content {
+    padding: 0 !important;
+    background-color: transparent;
+    box-shadow: none !important;
+    .ant-modal-body {
+      .ant-modal-confirm-body-wrapper {
+        .ant-modal-confirm-btns {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.ant-drawer-content {
+  .ant-drawer-wrapper-body {
+    .ant-drawer-header {
+      @apply hidden;
+    }
+    .ant-drawer-body {
+      @apply p-0;
+    }
+  }
+}
+
+.ant-btn-primary:disabled {
+  @apply bg-gray-300 text-gray-400;
+}
+.ant-btn-text {
+  &:hover {
+    background-color: white !important;
+    color: #247eff !important;
+  }
+}
+
+.ant-dropdown-arrow {
+  display: none !important;
+}
+.ant-dropdown .ant-dropdown-menu {
+  @apply p-2;
+  .ant-dropdown-menu-item {
+    @apply p-0 hover:bg-transparent;
+  }
+}

@@ -65,7 +65,7 @@ const TeacherListPage = () => {
   }
 
   return (
-    <div className='bg-blue-200 p-10'>
+    <div className='bg-blue-200 p-10 flex-1'>
       <div className='mx-auto max-w-7xl grid grid-cols-[2fr_1fr] gap-4'>
         <div className='shadow-2xl p-6 bg-white'>
           <div className='flex justify-between items-center mb-6'>

@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import DefaultLayout from '~/layouts/DefaultLayout'
 import NotFoundPage from '~/pages/404'
+import AdminPage from '~/pages/admin'
 import ForgotPasswordPage from '~/pages/auth/forgot-password'
 import LoginPage from '~/pages/auth/login'
 import RegisterPage from '~/pages/auth/register'
@@ -57,6 +58,14 @@ const BrowserRouter = () => {
       element: (
         <DefaultLayout>
           <TeacherListPage />
+        </DefaultLayout>
+      ),
+    },
+    {
+      path: routePath.admin,
+      element: (
+        <DefaultLayout>
+          <AdminPage />
         </DefaultLayout>
       ),
     },

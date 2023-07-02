@@ -9,10 +9,10 @@ interface DefaultLayoutProps {
 
 const DefaultLayout: FC<DefaultLayoutProps> = ({ children }) => {
   return (
-    <Wrapper>
-      <Header />
-      <main className='main'>{children}</main>
-      <Footer />
+    <Wrapper className='flex flex-col min-h-screen'>
+      {/* <Header /> */}
+      <main className='main flex-1 flex'>{children}</main>
+      {/* <Footer /> */}
     </Wrapper>
   )
 }
